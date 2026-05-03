@@ -5,7 +5,7 @@ import { join } from 'node:path';
 const POSTS_DIR = '_posts';
 const README = 'README.md';
 const MAX_POSTS = 5;
-const SITE_BASEURL = 'https://gaupoit.github.io/gaupoit';
+const SITE_BASEURL = 'https://devbanhmi.com';
 const START = '<!-- POSTS:START -->';
 const END = '<!-- POSTS:END -->';
 

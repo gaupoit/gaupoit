@@ -2,8 +2,8 @@ title: Build Diary
 description: Notes from building things in healthcare, AI infrastructure, and side projects.
 author: Paul
 
-baseurl: "/gaupoit"
-url: "https://gaupoit.github.io"
+baseurl: ""
+url: "https://devbanhmi.com"
 
 theme: minima
 minima:

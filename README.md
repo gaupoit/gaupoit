@@ -54,11 +54,11 @@ Notes from things I shipped this week. Healthcare, AI infrastructure, and side p
 
 | Date | Title | Summary |
 |------|-------|---------|
-| 2026-05-03 | [I Drew the Whole Hospital System in ASCII Before Touching Figma](https://gaupoit.github.io/gaupoit/2026/05/03/i-drew-the-whole-hospital-system-in-ascii/) | Why ASCII wireframes beat Figma for the first conversation with non-technical clients, with rough numbers on agent token cost. |
+| 2026-05-03 | [I Drew the Whole Hospital System in ASCII Before Touching Figma](https://devbanhmi.com/2026/05/03/i-drew-the-whole-hospital-system-in-ascii/) | Why ASCII wireframes beat Figma for the first conversation with non-technical clients, with rough numbers on agent token cost. |
 
 <!-- POSTS:END -->
 
-Full archive at [gaupoit.github.io/gaupoit](https://gaupoit.github.io/gaupoit/).
+Full archive at [devbanhmi.com](https://devbanhmi.com/).
 
 ---
 
