@@ -1,0 +1,34 @@
+title: Build Diary
+description: Notes from building things in healthcare, AI infrastructure, and side projects.
+author: Paul
+
+baseurl: "/gaupoit"
+url: "https://gaupoit.github.io"
+
+theme: minima
+minima:
+  skin: auto
+  date_format: "%Y-%m-%d"
+
+permalink: /:year/:month/:day/:title/
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+exclude:
+  - scripts/
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - .bundle/
+  - node_modules/

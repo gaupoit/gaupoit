@@ -1,0 +1,42 @@
+name: Publish blog
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '_posts/**'
+      - 'scripts/**'
+      - '.github/workflows/publish.yml'
+  workflow_dispatch:
+
+jobs:
+  check-and-update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Anonymization check
+        run: node scripts/check-anonymization.mjs
+
+      - name: Update README post index
+        run: node scripts/update-readme.mjs
+
+      - name: Commit README if changed
+        run: |
+          if git diff --quiet README.md; then
+            echo "No README changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "chore(readme): refresh post index [skip ci]"
+          git push
