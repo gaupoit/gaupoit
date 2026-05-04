@@ -2,8 +2,6 @@
 
 ### Hey, I'm Paul `0xGP`
 
-**Co-Founder & CTO** @ [Scrapee Labs](https://scrapeelabs.com) · Singapore
-
 Builder. Ship things that work. Write about it at [devbanhmi.com](https://devbanhmi.com).
 
 [![Blog](https://img.shields.io/badge/devbanhmi.com-0d1117?style=flat-square&logo=astro&logoColor=FF5D01)](https://devbanhmi.com)
