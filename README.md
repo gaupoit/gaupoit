@@ -52,6 +52,7 @@ Notes from things I shipped this week. Healthcare, AI infrastructure, and side p
 
 | Date | Title | Summary |
 |------|-------|---------|
+| 2026-05-04 | [The Treatment Plan Is a Matrix, Not a Workflow](https://devbanhmi.com/2026/05/04/the-treatment-plan-is-a-matrix-not-a-workflow/) | Cleft care lasts twenty years and crosses seven specialties. Modeling it as a sequence of steps was wrong. This is what a matrix model looks like, and how the doctors initially refused to believe it. |
 | 2026-05-03 | [I Drew the Whole Hospital System in ASCII Before Touching Figma](https://devbanhmi.com/2026/05/03/i-drew-the-whole-hospital-system-in-ascii/) | Why ASCII wireframes beat Figma for the first conversation with non-technical clients, with rough numbers on agent token cost. |
 
 <!-- POSTS:END -->
