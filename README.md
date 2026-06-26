@@ -2,10 +2,7 @@
 
 ### Hey, I'm Paul `0xGP`
 
-Builder. Ship things that work. Write about it at [devbanhmi.com](https://devbanhmi.com).
-
-[![Blog](https://img.shields.io/badge/devbanhmi.com-0d1117?style=flat-square&logo=astro&logoColor=FF5D01)](https://devbanhmi.com)
-[![Scrapee Labs](https://img.shields.io/badge/Scrapee_Labs-0d1117?style=flat-square&logo=google-chrome&logoColor=5EFFB4)](https://scrapeelabs.com)
+Builder. Ship things that work.
 
 </div>
 
