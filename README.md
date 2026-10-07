@@ -49,6 +49,7 @@ Notes from things I shipped this week. Healthcare, AI infrastructure, and side p
 
 | Date | Title | Summary |
 |------|-------|---------|
+| 2026-10-08 | [I Stopped Screen-Recording Training Videos. Now I Compile Them.](https://devbanhmi.com/2026/10/08/i-stopped-screen-recording-training-videos/) | Nine training videos for doctors and coordinators, about thirty minutes in total, and not one of them was screen-recorded. A Playwright script captures the real app step by step, Remotion turns the steps into video, and the timeline decides how long each step stays on screen. |
 | 2026-05-04 | [The Treatment Plan Is a Matrix, Not a Workflow](https://devbanhmi.com/2026/05/04/the-treatment-plan-is-a-matrix-not-a-workflow/) | Cleft care lasts twenty years and crosses seven specialties. Modeling it as a sequence of steps was wrong. This is what a matrix model looks like, and how the doctors initially refused to believe it. |
 | 2026-05-03 | [I Drew the Whole Hospital System in ASCII Before Touching Figma](https://devbanhmi.com/2026/05/03/i-drew-the-whole-hospital-system-in-ascii/) | Why ASCII wireframes beat Figma for the first conversation with non-technical clients, with rough numbers on agent token cost. |
 
