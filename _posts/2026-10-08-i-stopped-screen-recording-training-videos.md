@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "I Stopped Screen-Recording Training Videos. Now I Compile Them."
-date: 2026-10-08
+date: 2026-10-08 00:00:00 +0700
 summary: "Nine training videos for doctors and coordinators, about thirty minutes in total, and not one of them was screen-recorded. A Playwright script captures the real app step by step, Remotion turns the steps into video, and the timeline decides how long each step stays on screen."
 tags: [diary, video, playwright, remotion, healthcare]
 ---
