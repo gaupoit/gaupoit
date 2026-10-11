@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "\"AI Is Just Software\" Is Half Right"
-date: 2026-10-11 13:30:00 +0700
+date: 2026-10-11 12:30:00 +0700
 summary: "On All-In this week, David Friedberg said AI is just software, a program people wrote. He is right about what it is and wrong about how it behaves. Nobody writes an LLM's behavior; it is learned, and even its makers can't read it. Three diagrams on why that matters, and what it changes when you build agents."
 tags: [diary, ai, agents, lessons]
 ---
