@@ -2,7 +2,7 @@
 layout: post
 title: "Ghost Typist: I Made Claude Code Let Me Pretend I'm the One Typing"
 date: 2026-10-10 22:00:00 +0700
-summary: "A Claude Code mod that types out the agent's code in a side pane, key by key, with keyboard sounds, plus a Hacker Typer mode where your own key presses type it. Useless, and a good teacher: partial JSON, a Zeno's-paradox bug, a text field that remembered everything, and why the recording is the real test."
+summary: "A Claude Code mod that types out the agent's code in a side pane, key by key, with keyboard sounds and an on-screen keyboard that lights each key, plus a Hacker Typer mode where your own key presses type it. Useless, and a good teacher: partial JSON, a Zeno's-paradox bug, a text field that remembered everything, why the recording is the real test, and what it takes to make a keyboard look like it is typing."
 tags: [diary, claude-code, side-project, typescript]
 ---
 
@@ -11,13 +11,14 @@ diff appears. You nod. You never see *how* it got there.
 
 I missed the feeling of code appearing one key at a time. So I spent a couple of evenings building
 **Ghost Typist**, a Claude Code mod that takes the code the agent is writing and types it
-out in a side pane, key by key, with mechanical keyboard sounds. Then I added a Hacker
-Typer mode where *my* key presses type the agent's code.
+out in a side pane, key by key, with mechanical keyboard sounds. Under the code, an
+on-screen keyboard lights up each key as it's "pressed". Then I added a Hacker Typer mode
+where *my* key presses type the agent's code.
 
 It is completely useless. I love it.
 
 <video src="/assets/ghost-typist-guide.mp4" autoplay loop muted playsinline controls width="100%">
-  Watch mode, then hacker mode: <a href="https://github.com/gaupoit/ghost-typist">see the demo on GitHub</a>.
+  Watch mode, then hacker mode, with the keyboard lighting each key: <a href="https://github.com/gaupoit/ghost-typist">see the demo on GitHub</a>.
 </video>
 
 Repo: [github.com/gaupoit/ghost-typist](https://github.com/gaupoit/ghost-typist)
@@ -31,8 +32,13 @@ Repo: [github.com/gaupoit/ghost-typist](https://github.com/gaupoit/ghost-typist)
 - **Watch mode** (default): when the agent calls `Write`, `Edit`, `MultiEdit`,
   `NotebookEdit` or `Bash`, a pane on the right types the code out at a human-ish pace,
   with a cursor and a clicky (or thocky) keyboard.
+- **The keyboard**: a US keyboard at the bottom of the pane lights the key of each
+  character as it appears. Capitals and symbols light shift, a new line lights Enter, and
+  indentation lights nothing.
 - **Hacker mode** (`/typist mode hacker`): the code waits for you. Every letter key you
-  press types the next 3–5 characters. Stop typing and it stops.
+  press types the next 3–5 characters. Stop typing and it stops. The keyboard lights the
+  keys of the code that appears, not the keys you hit: you mash `asdf` and it shows you
+  typing `const`.
 - It's purely cosmetic: the agent never waits for the show.
 
 Below are the lessons, because the toy turned out to be a good teacher.
@@ -135,7 +141,31 @@ three things no test had caught:
 Tests check what you thought to assert. A recording shows what the user actually sees.
 For anything visual, the video is the test.
 
-## Lesson 8: the mod API's rules, learned from the validator
+## Lesson 8: a keyboard that types for you is mostly about timing
+
+Drawing a keyboard in a terminal is easy: five rows of `Text`, each key three columns
+wide, and the pressed ones in inverse with the accent colour. Working out *which* key
+types a character is a small lookup table: `A` is shift plus `a`, `{` is shift plus `[`,
+and a newline is Enter. Making it look like typing was about timing and layout:
+
+- **Lit only for one frame, keys would blink.** The pane redraws every 50 ms, but at
+  110 WPM a character arrives only about every 110 ms, so most frames type nothing. A key
+  stays lit for 5 frames (250 ms) after its character. I started at 3 frames (150 ms), then
+  did the arithmetic: a space can cost up to 1.8 keystrokes, about 200 ms, which would leave
+  a dark gap mid-word and make the "a key is lit" test flaky.
+- **Indentation must not light the space bar**, or every new line would flash a burst of
+  spaces. The pacing code already treats indentation as "your editor typed it", so the
+  keyboard reuses that rule and lights nothing for it.
+- **The keyboard slid down the pane** as the code grew, which looks nothing like a desk.
+  Making the pane fill its height with a spacer above the keyboard fixed that, and the
+  status line then floated in the middle of the pane. Both bugs were obvious in the recorded
+  screenshots and invisible to every test, which is lesson 7 again.
+
+In hacker mode, the trick is lighting the keys of the *code*, not the keys you pressed.
+Your fingers mash the home row, and the screen says you typed
+`` return `Hello, ${name}` ``.
+
+## Lesson 9: the mod API's rules, learned from the validator
 
 - `$` (the engine handle) may only be passed to top-level functions. My helpers lived
   inside `register` as closures and `claude plugin validate` refused them. Module-level
@@ -153,6 +183,7 @@ For anything visual, the video is the test.
 /typist                 # open the pane (it opens by itself on wide terminals)
 /typist mode hacker     # every letter you press types the agent's code
 /typist sound thock     # clicky, thock or off
+/typist keyboard off    # hide the keyboard
 ```
 
 Sound plays on macOS. The pane docks beside the transcript on terminals at least 144
@@ -169,3 +200,4 @@ showing only the new text.
 3. Anything that must finish on time needs a deadline, not a proportional speed-up.
 4. When a UI widget fights you three times, stop using that widget.
 5. Green tests aren't the finish line for UI. Record it and watch it.
+6. Animations live or die on timing: hold a lit state longer than the gap between events.
