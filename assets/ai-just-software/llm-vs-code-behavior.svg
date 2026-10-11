@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 496" role="img" aria-label="Traditional code writes behavior. An LLM learns it."><style>
+  .bg{fill:#ffffff}
+  .ink{fill:#1f1f1f}
+  .quiet{fill:#666666}
+  .box{fill:none;stroke:#b9b6ab;stroke-width:1.25}
+  .tint{fill:#f1efe8;stroke:#b9b6ab;stroke-width:1.25}
+  .acc{fill:#2f6fd6;fill-opacity:.12;stroke:#2f6fd6;stroke-width:2}
+  .line{fill:none;stroke:#b9b6ab;stroke-width:1.25}
+  .accline{fill:none;stroke:#2f6fd6;stroke-width:1.25}
+  .arrowhead{fill:#b9b6ab}
+  .grid{stroke:#e2e0d8;stroke-width:1}
+  text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:13px}
+  .t{font-size:15px;font-weight:600}
+  .h{font-size:14px;font-weight:600}
+  .b{font-weight:600}
+  .s{font-size:11.5px}
+  @media (prefers-color-scheme: dark){
+    .bg{fill:#1b1b1b}
+    .ink{fill:#ececec}
+    .quiet{fill:#a8a8a8}
+    .box,.line{stroke:#6b6b6b}
+    .tint{fill:#2a2a2a;stroke:#6b6b6b}
+    .acc{fill:#6aa0ff;stroke:#6aa0ff;fill-opacity:.16}
+    .accline{stroke:#6aa0ff}
+    .arrowhead{fill:#6b6b6b}
+    .grid{stroke:#333333}
+  }
+</style>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path class="arrowhead" d="M0 0L10 5L0 10z"/></marker></defs><rect class="bg" x="0" y="0" width="760" height="496" rx="12"/><text class="ink t" x="24" y="34">Traditional code writes behavior. An LLM learns it.</text><text class="ink h" x="190.0" y="76" text-anchor="middle">Traditional software</text><text class="ink h" x="570.0" y="76" text-anchor="middle">LLM</text><path class="line" d="M190.0 152V176" marker-end="url(#arrow)"/><path class="line" d="M190.0 232V416" marker-end="url(#arrow)"/><path class="line" d="M570.0 152V176" marker-end="url(#arrow)"/><path class="line" d="M570.0 232V256" marker-end="url(#arrow)"/><path class="line" d="M570.0 312V336" marker-end="url(#arrow)"/><path class="line" d="M570.0 392V416" marker-end="url(#arrow)"/><rect class="box" x="40" y="96" width="300" height="56" rx="8"/><text class="ink b" x="190.0" y="128" text-anchor="middle">Developer</text><rect class="box" x="40" y="176" width="300" height="56" rx="8"/><text class="ink b" x="190.0" y="200" text-anchor="middle">Writes the rules</text><text class="quiet s" x="190.0" y="218" text-anchor="middle">if-else, every line readable</text><text class="quiet s" x="202.0" y="328" text-anchor="start">runs exactly as written</text><rect class="box" x="40" y="416" width="300" height="56" rx="8"/><text class="ink b" x="190.0" y="440" text-anchor="middle">Behavior</text><text class="quiet s" x="190.0" y="458" text-anchor="middle">Read the code, know the output</text><rect class="box" x="420" y="96" width="300" height="56" rx="8"/><text class="ink b" x="570.0" y="128" text-anchor="middle">Developer</text><rect class="box" x="420" y="176" width="300" height="56" rx="8"/><text class="ink b" x="570.0" y="200" text-anchor="middle">Writes the training recipe</text><text class="quiet s" x="570.0" y="218" text-anchor="middle">architecture, loss, a few thousand lines</text><rect class="box" x="420" y="256" width="300" height="56" rx="8"/><text class="ink b" x="570.0" y="280" text-anchor="middle">Trains on huge amounts of text</text><text class="quiet s" x="570.0" y="298" text-anchor="middle">adjusted over countless steps</text><rect class="acc" x="420" y="336" width="300" height="56" rx="8"/><text class="ink b" x="570.0" y="360" text-anchor="middle">Hundreds of billions of weights</text><text class="ink s" x="570.0" y="378" text-anchor="middle">just numbers, nobody can read them</text><rect class="box" x="420" y="416" width="300" height="56" rx="8"/><text class="ink b" x="570.0" y="440" text-anchor="middle">Behavior</text><text class="quiet s" x="570.0" y="458" text-anchor="middle">Run it to find out</text></svg>
